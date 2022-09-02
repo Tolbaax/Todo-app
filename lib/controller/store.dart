@@ -19,4 +19,5 @@ class Store {
     users.doc(uId).collection('tasks').doc(id).delete();
     showToast(text: '${title} Deleted', state: ToastState.error);
   }
+
 }
