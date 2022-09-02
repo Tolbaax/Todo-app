@@ -1,4 +1,4 @@
-# todo_app
+# Todo app
 
 A new Flutter project.
 
