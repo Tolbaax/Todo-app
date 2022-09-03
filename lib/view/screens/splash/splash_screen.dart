@@ -1,37 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:todo_app/view/screens/home/home_screen.dart';
-import 'package:todo_app/view/screens/login/login_screen.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  bool isSigned = false;
-  checkFirst() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    setState(() {
-      isSigned = preferences.getBool('sign')!;
-    });
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    checkFirst();
-    Timer(const Duration(seconds: 1), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => isSigned ? HomeScreen() : LoginScreen(),
-      ));
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

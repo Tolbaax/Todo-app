@@ -19,7 +19,6 @@ class TaskScreen extends StatelessWidget {
     Colors.yellow,
     Colors.red,
   ];
-
   Store store = Store();
   Auth auth = Auth();
   @override

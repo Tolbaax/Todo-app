@@ -14,14 +14,13 @@ class ForgotScreen extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade100,
         body: SingleChildScrollView(
           child: Form(
             key: formKey,
             child: Column(
               children: [
                 SizedBox(
-                  height: screenSize.height * 0.03,
+                  height: screenSize.height * 0.04,
                 ),
                 const Image(
                   image: AssetImage('assets/images/Forgot password.png'),
@@ -67,12 +66,7 @@ class ForgotScreen extends StatelessWidget {
                   child: InkWell(
                     onTap: () {
                       FocusScope.of(context).unfocus();
-
-                      if (forgotController.text.isEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('Please Enter Your Email')));
-                      } else {
+                      if (formKey.currentState!.validate()) {
                         try {
                           auth.forgotPassword(forgotController.text);
                           showToast(

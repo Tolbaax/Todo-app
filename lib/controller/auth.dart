@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:todo_app/shared/components/constant.dart';
+import 'package:todo_app/shared/network/local/cache_helper.dart';
 
 class Auth {
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -31,7 +32,10 @@ class Auth {
     await auth
         .signInWithEmailAndPassword(email: email, password: password)
         .then(
-          (value) => uId = auth.currentUser!.uid,
+          (value) => {
+            uId = auth.currentUser!.uid,
+            CacheHelper.saveData(key: 'uId', value: uId),
+          },
         );
   }
 
@@ -62,7 +66,10 @@ class Auth {
       'name': user.user!.displayName,
       'image': user.user!.photoURL,
     }).then(
-      (value) => uId = user.user!.uid,
+      (value) => {
+        uId = auth.currentUser!.uid,
+        CacheHelper.saveData(key: 'uId', value: uId),
+      },
     );
 
     // Once signed in, return the UserCredential
@@ -85,7 +92,10 @@ class Auth {
       'image': user.user!.photoURL,
       'name': user.user!.displayName,
     }).then(
-      (value) => uId = user.user!.uid,
+      (value) => {
+        uId = auth.currentUser!.uid,
+        CacheHelper.saveData(key: 'uId', value: uId),
+      },
     );
 
     // Once signed in, return the UserCredential
@@ -102,5 +112,7 @@ class Auth {
 
     //Facebook SignOut
     await FacebookAuth.instance.logOut();
+
+    CacheHelper.removeData(key: 'uId');
   }
 }

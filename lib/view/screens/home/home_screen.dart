@@ -2,29 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/controller/provider.dart';
 import 'package:todo_app/model/menu_item_model.dart';
 import 'package:todo_app/view/screens/menu/menu_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  isSigned() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setBool('sign', true);
-  }
-
+class HomeScreen extends StatelessWidget {
   ZoomDrawerController zoomDrawerController = ZoomDrawerController();
-
-  @override
-  void initState() {
-    super.initState();
-    isSigned();
-  }
 
   @override
   Widget build(BuildContext context) {
