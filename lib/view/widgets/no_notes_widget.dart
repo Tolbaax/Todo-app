@@ -19,8 +19,8 @@ Widget noNotesWidget(context) {
         child: AnimatedTextKit(
           repeatForever: true,
           animatedTexts: [
-            TyperAnimatedText("There's no notes yet!"),
-            TyperAnimatedText("Tab '+' to add new note"),
+            FadeAnimatedText("There's no notes yet!"),
+            FadeAnimatedText("Tab '+' to add new note"),
           ],
         ),
       ),

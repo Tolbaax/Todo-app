@@ -6,13 +6,13 @@ import 'package:todo_app/controller/auth.dart';
 import 'package:todo_app/controller/store.dart';
 import 'package:todo_app/model/note_model.dart';
 import 'package:todo_app/shared/components/components.dart';
-import 'package:todo_app/view/screens/add_note_screen.dart';
-import 'package:todo_app/view/screens/schedule_screen.dart';
+import 'package:todo_app/view/screens/add_task/add_task_screen.dart';
+import 'package:todo_app/view/screens/schedule/schedule_screen.dart';
 import 'package:todo_app/view/widgets/no_notes_widget.dart';
 import 'package:todo_app/view/widgets/note_widget.dart';
 import 'package:todo_app/view/widgets/profile_image_widget.dart';
 
-class NoteScreen extends StatelessWidget {
+class TaskScreen extends StatelessWidget {
   static const colorizeColors = [
     Colors.black,
     Colors.blue,
@@ -59,7 +59,7 @@ class NoteScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         child: Icon(Icons.add),
         onPressed: () {
-          navigateTo(context, AddNoteScreen());
+          navigateTo(context, AddTaskScreen());
         },
       ),
       body: StreamBuilder<QuerySnapshot>(

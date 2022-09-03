@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/controller/auth.dart';
 import 'package:todo_app/controller/provider.dart';
 import 'package:todo_app/shared/components/components.dart';
-import 'package:todo_app/view/screens/login_screen.dart';
+import 'package:todo_app/view/screens/login/login_screen.dart';
 import 'package:todo_app/view/widgets/custom_button_widget.dart';
 import 'package:todo_app/view/widgets/default_form_filed_widget.dart';
 

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/controller/provider.dart';
 import 'package:todo_app/shared/components/constant.dart';
 import 'package:todo_app/shared/network/local/cache_helper.dart';
-import 'package:todo_app/view/screens/splash_screen.dart';
+import 'package:todo_app/view/screens/splash/splash_screen.dart';
 
 import 'firebase_options.dart';
 

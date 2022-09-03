@@ -4,9 +4,9 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/controller/auth.dart';
 import 'package:todo_app/controller/provider.dart';
 import 'package:todo_app/shared/components/components.dart';
-import 'package:todo_app/view/screens/forgot_screen.dart';
-import 'package:todo_app/view/screens/home_screen.dart';
-import 'package:todo_app/view/screens/signup.dart';
+import 'package:todo_app/view/screens/forgot_password/forgot_screen.dart';
+import 'package:todo_app/view/screens/home/home_screen.dart';
+import 'package:todo_app/view/screens/signup/signup_screen.dart';
 import 'package:todo_app/view/widgets/custom_button_widget.dart';
 import 'package:todo_app/view/widgets/default_form_filed_widget.dart';
 

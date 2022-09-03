@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/controller/auth.dart';
 import 'package:todo_app/model/menu_item_model.dart';
+import 'package:todo_app/view/screens/home/home_screen.dart';
 import 'package:todo_app/view/widgets/logout_button_widget.dart';
 import 'package:todo_app/view/widgets/profile_image_widget.dart';
 
@@ -150,16 +151,4 @@ class _MenuScreenState extends State<MenuScreen> {
       });
     }
   }
-}
-
-class MenuItems {
-  static final tasks = MenuItemModel('Tasks', Icons.task_outlined);
-  static final archived = MenuItemModel('Archived', Icons.archive_outlined);
-  static final done = MenuItemModel('Done', Icons.task_alt_outlined);
-
-  static final all = <MenuItemModel>[
-    tasks,
-    archived,
-    done,
-  ];
 }

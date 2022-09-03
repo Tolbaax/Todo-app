@@ -7,9 +7,6 @@ class DoneScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    var height = screenSize.height;
-    var width = screenSize.width;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(

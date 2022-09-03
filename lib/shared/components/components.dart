@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:todo_app/view/screens/home_screen.dart';
+import 'package:todo_app/view/screens/home/home_screen.dart';
 
 void navigateTo(context, widget) => Navigator.push(
       context,

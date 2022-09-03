@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:todo_app/controller/provider.dart';
 import 'package:todo_app/model/menu_item_model.dart';
-import 'package:todo_app/view/screens/archived_screen.dart';
-import 'package:todo_app/view/screens/done_screen.dart';
-import 'package:todo_app/view/screens/note_screen.dart';
-
-import 'menu_screen.dart';
+import 'package:todo_app/view/screens/menu/menu_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   ZoomDrawerController zoomDrawerController = ZoomDrawerController();
-  MenuItemModel currentItem = MenuItems.tasks;
+
   @override
   void initState() {
     super.initState();
@@ -30,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    AppProvider provider = Provider.of<AppProvider>(context);
     var screenSize = MediaQuery.of(context).size;
     var width = screenSize.width;
     return SafeArea(
@@ -37,15 +36,12 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.blueGrey.shade800,
         body: ZoomDrawer(
           controller: zoomDrawerController,
-          mainScreen: getScreen(),
+          mainScreen: provider.getScreen(),
           menuScreen: Builder(
             builder: (context) => MenuScreen(
-              currentItem: currentItem,
+              currentItem: provider.currentItem,
               onSelectedItem: (item) {
-                setState(() {
-                  currentItem = item;
-                });
-
+                provider.changeItem(item);
                 ZoomDrawer.of(context)!.close();
               },
             ),
@@ -57,14 +53,16 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
 
-  getScreen() {
-    if (currentItem == MenuItems.tasks) {
-      return NoteScreen();
-    } else if (currentItem == MenuItems.done) {
-      return DoneScreen();
-    } else if (currentItem == MenuItems.archived) {
-      return ArchivedScreen();
-    }
-  }
+class MenuItems {
+  static final tasks = MenuItemModel('Tasks', Icons.task_outlined);
+  static final archived = MenuItemModel('Archived', Icons.archive_outlined);
+  static final done = MenuItemModel('Done', Icons.task_alt_outlined);
+
+  static final all = <MenuItemModel>[
+    tasks,
+    archived,
+    done,
+  ];
 }

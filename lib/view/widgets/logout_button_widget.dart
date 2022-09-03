@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/controller/auth.dart';
 import 'package:todo_app/shared/components/components.dart';
-import 'package:todo_app/view/screens/login_screen.dart';
+import 'package:todo_app/view/screens/login/login_screen.dart';
 
 Widget LogOutButton(context) {
   Auth auth = Auth();

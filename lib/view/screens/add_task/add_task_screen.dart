@@ -9,7 +9,7 @@ import 'package:todo_app/view/widgets/custom_button_widget.dart';
 import 'package:todo_app/view/widgets/default_form_filed_widget.dart';
 import 'package:todo_app/view/widgets/profile_image_widget.dart';
 
-class AddNoteScreen extends StatelessWidget {
+class AddTaskScreen extends StatelessWidget {
   TextEditingController titleController = TextEditingController();
   TextEditingController noteController = TextEditingController();
   TextEditingController deadLineController = TextEditingController();
