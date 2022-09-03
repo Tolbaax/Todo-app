@@ -38,14 +38,11 @@ dependencies:
   provider: ^6.0.3
   cloud_firestore: ^3.4.4
   google_sign_in: ^5.4.1
-  modal_progress_hud_nsn: ^0.3.0
   flutter_facebook_auth: ^4.4.1
-  conditional_builder_null_safety: ^0.0.6
   intl: ^0.17.0
-  animated_bottom_navigation_bar: ^1.1.0
-  percent_indicator: ^4.2.2
   animated_text_kit: ^4.2.2
   flutter_zoom_drawer: ^3.0.3
+  date_picker_timeline: ^1.2.3
 
 
 dev_dependencies:

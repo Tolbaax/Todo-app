@@ -27,7 +27,6 @@ class TaskScreen extends StatelessWidget {
     var height = screenSize.height;
     var width = screenSize.width;
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),

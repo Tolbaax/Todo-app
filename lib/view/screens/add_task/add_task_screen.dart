@@ -153,6 +153,7 @@ class AddTaskScreen extends StatelessWidget {
                                 onTap: () {
                                   showTimePicker(
                                     context: context,
+                                    initialEntryMode: TimePickerEntryMode.input,
                                     initialTime: TimeOfDay.now(),
                                   ).then((value) {
                                     startTimeController.text =
@@ -181,6 +182,7 @@ class AddTaskScreen extends StatelessWidget {
                                 onTap: () {
                                   showTimePicker(
                                     context: context,
+                                    initialEntryMode: TimePickerEntryMode.input,
                                     initialTime: TimeOfDay.now(),
                                   ).then((value) {
                                     endTimeController.text =
