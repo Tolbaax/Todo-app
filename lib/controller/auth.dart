@@ -108,7 +108,7 @@ class Auth {
     return user;
   }
 
-  // Sign Out >>> not complete <<<
+  // Sign Out
   Future signOut() async {
     if (loggedBy == 'Default') {
       //Firebase SignOut
