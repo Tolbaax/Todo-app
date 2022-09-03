@@ -18,7 +18,7 @@ class Auth {
 
     fireStore.collection('users').doc(user.user!.uid).set(
       {
-        'email': email,
+        'email': email.toString(),
         'id': user.user!.uid,
         'name': name,
       },
@@ -35,6 +35,8 @@ class Auth {
           (value) => {
             uId = auth.currentUser!.uid,
             CacheHelper.saveData(key: 'uId', value: uId),
+            CacheHelper.saveData(key: 'loggedBy', value: 'Default'),
+            loggedBy = CacheHelper.getData(key: 'loggedBy'),
           },
         );
   }
@@ -69,6 +71,8 @@ class Auth {
       (value) => {
         uId = auth.currentUser!.uid,
         CacheHelper.saveData(key: 'uId', value: uId),
+        CacheHelper.saveData(key: 'loggedBy', value: 'Google'),
+        loggedBy = CacheHelper.getData(key: 'loggedBy'),
       },
     );
 
@@ -95,6 +99,8 @@ class Auth {
       (value) => {
         uId = auth.currentUser!.uid,
         CacheHelper.saveData(key: 'uId', value: uId),
+        CacheHelper.saveData(key: 'loggedBy', value: 'Facebook'),
+        loggedBy = CacheHelper.getData(key: 'loggedBy'),
       },
     );
 
@@ -104,15 +110,18 @@ class Auth {
 
   // Sign Out >>> not complete <<<
   Future signOut() async {
-    //Firebase SignOut
-    await auth.signOut();
-
-    //Google SignOut
-    await GoogleSignIn().signOut();
-
-    //Facebook SignOut
-    await FacebookAuth.instance.logOut();
+    if (loggedBy == 'Default') {
+      //Firebase SignOut
+      await auth.signOut();
+    } else if (loggedBy == 'Google') {
+      //Google SignOut
+      await GoogleSignIn().signOut();
+    } else if (loggedBy == 'Facebook') {
+      //Facebook SignOut
+      await FacebookAuth.instance.logOut();
+    }
 
     CacheHelper.removeData(key: 'uId');
+    CacheHelper.removeData(key: 'loggedBy');
   }
 }

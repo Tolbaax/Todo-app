@@ -1,3 +1,4 @@
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/view/widgets/profile_image_widget.dart';
 
@@ -17,7 +18,7 @@ class ScheduleScreen extends StatelessWidget {
           ),
           titleTextStyle: TextStyle(color: Colors.black),
           title: Text(
-            "Today's Task",
+            "Schedule",
             style: TextStyle(
               fontSize: 23.0,
               fontWeight: FontWeight.w500,
@@ -34,6 +35,20 @@ class ScheduleScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           iconTheme: IconThemeData(color: Colors.black),
+        ),
+        body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+              child: DatePicker(
+                DateTime.now(),
+                height: 90,
+                width: 65,
+                initialSelectedDate: DateTime.now(),
+                selectionColor: Colors.deepPurple.shade400,
+              ),
+            ),
+          ],
         ),
       ),
     );

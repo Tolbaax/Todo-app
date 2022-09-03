@@ -87,9 +87,8 @@ void validateLogin(formKey, auth, email, password, context) async {
     formKey.currentState!.save();
 
     try {
-      await auth.signIn(email.toString(), password.toString());
+      await auth.signIn(email, password);
 
-      // inAsyncCall => False
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => HomeScreen(),
       ));

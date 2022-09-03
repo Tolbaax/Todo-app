@@ -13,6 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final Widget startWidget;
   await CacheHelper.init();
+  loggedBy = CacheHelper.getData(key: 'loggedBy');
   // use shared preferences to open app in right screen only
   uId = CacheHelper.getData(key: 'uId');
   if (uId != null) {

@@ -1,2 +1,3 @@
-///
-dynamic uId;
+//
+String uId = '';
+String loggedBy = '';

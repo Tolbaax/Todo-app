@@ -17,6 +17,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
   Auth auth = Auth();
   String? email;
   String? password;
@@ -108,6 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Column(
                             children: [
                               defaultFormFiled(
+                                controller: emailController,
                                 label: 'Email',
                                 hint: 'Enter your email',
                                 type: TextInputType.emailAddress,
@@ -120,6 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 height: screenSize.height * 0.04,
                               ),
                               defaultFormFiled(
+                                  controller: passwordController,
                                   label: 'Password',
                                   hint: 'Enter your password',
                                   type: TextInputType.visiblePassword,

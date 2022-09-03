@@ -5,6 +5,7 @@ class TaskModel {
   String? startTime;
   String? endTime;
   int? colorId;
+  String? loggedBy;
 
   TaskModel({
     this.title,
@@ -13,6 +14,7 @@ class TaskModel {
     this.startTime,
     this.endTime,
     this.colorId,
+    this.loggedBy,
   });
 
   toJson() {
@@ -23,6 +25,7 @@ class TaskModel {
       'startTime': startTime,
       'endTime': endTime,
       'colorId': colorId,
+      'loggedBy': loggedBy,
     };
   }
 }
