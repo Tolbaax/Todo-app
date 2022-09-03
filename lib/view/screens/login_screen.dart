@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
               left: 0.0,
               right: 0.0,
               child: Container(
-                height: screenSize.height * 0.7,
+                height: screenSize.height * 1,
                 width: screenSize.width * 1,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: screenSize.height * 0.03,
+                        height: screenSize.height * 0.02,
                       ),
                       const Text(
                         'Login',
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               validate: validateEmail,
                             ),
                             SizedBox(
-                              height: screenSize.height * 0.05,
+                              height: screenSize.height * 0.035,
                             ),
                             defaultFormFiled(
                                 label: 'Password',
@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       SizedBox(
-                        height: screenSize.height * 0.04,
+                        height: screenSize.height * 0.035,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -231,7 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       SizedBox(
-                        height: screenSize.height * 0.045,
+                        height: screenSize.height * 0.03,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -257,7 +257,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           SizedBox(
-                            width: screenSize.width * 0.12,
+                            width: screenSize.width * 0.1,
                           ),
                           InkWell(
                             onTap: () async {
