@@ -1,3 +1,3 @@
 //
-String uId = '';
-String loggedBy = '';
+dynamic uId;
+dynamic loggedBy;

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/model/menu_item_model.dart';
 import 'package:todo_app/model/note_model.dart';
@@ -39,6 +40,15 @@ class AppProvider extends ChangeNotifier {
       return DoneScreen();
     } else if (currentItem == MenuItems.archived) {
       return ArchivedScreen();
+    }
+  }
+
+  Future<void> getTasks(snapShot) async {
+    for (DocumentSnapshot doc in snapShot.data!.docs) {
+      Map<String, dynamic> json = doc.data() as Map<String, dynamic>;
+      TaskModel model = TaskModel.fromJson(json);
+      allTasks.add(model);
+      notifyListeners();
     }
   }
 }

@@ -5,7 +5,6 @@ class TaskModel {
   String? startTime;
   String? endTime;
   int? colorId;
-  String? loggedBy;
 
   TaskModel({
     this.title,
@@ -14,10 +13,17 @@ class TaskModel {
     this.startTime,
     this.endTime,
     this.colorId,
-    this.loggedBy,
   });
+  TaskModel.fromJson(Map<String, dynamic> json) {
+    title = json['title'];
+    note = json['note'];
+    deadLine = json['deadLine'];
+    startTime = json['startTime'];
+    endTime = json['endTime'];
+    colorId = json['colorId'];
+  }
 
-  toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'title': title,
       'note': note,
@@ -25,7 +31,6 @@ class TaskModel {
       'startTime': startTime,
       'endTime': endTime,
       'colorId': colorId,
-      'loggedBy': loggedBy,
     };
   }
 }

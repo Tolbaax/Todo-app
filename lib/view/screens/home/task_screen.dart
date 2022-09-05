@@ -102,7 +102,8 @@ class TaskScreen extends StatelessWidget {
                           animatedTexts: [
                             ColorizeAnimatedText(
                               "What\'s up, Mohamed!",
-                              textStyle: TextStyle(fontSize: 20.0),
+                              textStyle: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.w500),
                               colors: colorizeColors,
                             ),
                           ],
